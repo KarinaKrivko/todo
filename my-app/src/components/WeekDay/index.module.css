@@ -1,0 +1,77 @@
+.data {
+    position: absolute;
+    width: 1088px;
+    height: 70px;
+    left: 82px;
+    top: 450px;
+    border-radius: 20px;
+
+    background: #ECF0F1;
+    display: inline-block;
+}
+
+.prio {
+    width: 286px;
+    height: 47px;
+    left: 194px;
+    top: 312px;
+    background: #E74C3C;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: inline-block;
+}
+
+.weekdayText {
+    display: inline-block;
+    background-color: #34495E;
+    border-radius: 20px 0px 0px 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 60px;
+    left: 20px;
+
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+    display: inline-block;
+
+}
+
+.description {
+   
+    width: 286px;
+    height: 47px;
+    left: 497px;
+    top: 469px;
+
+    background-color: yellow;
+    display: inline-block;
+
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    align-items: center;
+    margin: 8px;
+    display: inline-block;
+}
+
+.descriptionContainer {
+
+    width: 780px;
+    height: 70px;
+    border-radius: 20px;
+
+    background: #ECF0F1;
+    display: inline-block;
+}

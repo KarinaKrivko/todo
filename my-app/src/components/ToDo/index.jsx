@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Priority from "../Priority";
+import s from './index.module.css';
+
 
 
 function ToDo() {
@@ -22,7 +23,7 @@ function ToDo() {
     setTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setDescription("");
-    
+
   };
 
   const handleInputChange = (event) => {
@@ -38,36 +39,36 @@ function ToDo() {
   };
 
 
-
-
-
   return (
-    <form onSubmit={handleSubmit}>
-
-        <select value={priority} onChange={handlePriority}>
-        <option value="Выберите важность" >Выберите важность</option>
-            <option value="1">Важно</option>
-            <option value="2">Не важно</option>
+    <div className={s.container}>
+      <form onSubmit={handleSubmit}>
+        <select className={s.weekDay} value={selectedWeekday} onChange={handleWeekdayChange}>
+          <option value="Select a day">Select a day</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="7">Sunday</option>
         </select>
 
-        <select value={selectedWeekday} onChange={handleWeekdayChange}>
-        <option value="1">Понедельник</option>
-        <option value="2">Вторник</option>
-        <option value="3">Среда</option>
-        <option value="4">Четверг</option>
-        <option value="5">Пятница</option>
-        <option value="6">Суббота</option>
-        <option value="7">Воскресенье</option>
-      </select>
+        <select className={s.prio} value={priority} onChange={handlePriority}>
+          <option value="Select priority" >Select priority</option>
+          <option value="1">High</option>
+          <option value="2">Low</option>
+        </select>
 
-      <input
-        placeholder="Описание"
-        type="text"
-        value={description}
-        onChange={handleInputChange}
-      />
-      <button type="submit">Добавить</button>
-    </form>
+        <input className={s.descr}
+          placeholder="Description"
+          type="text"
+          value={description}
+          onChange={handleInputChange}
+        />
+
+        <button className={s.btn} type="submit">Add</button>
+      </form>
+    </div>
   );
 }
 

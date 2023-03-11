@@ -6,12 +6,12 @@ function Priority(props) {
     const [priority, setPriority] = useState("");
     return (
      
-        <select name="priority">
-        <option value="Выберите важность" selected="selected">Выберите важность</option>
-            <option value="1">Важно</option>
-            <option  value="2">Не важно</option>
+        <select>
+        <option value="Select priority" selected="selected">Select priority</option>
+            <option value="1">High</option>
+            <option  value="2">Low</option>
         </select>
-       
+    
     );
 }
 
