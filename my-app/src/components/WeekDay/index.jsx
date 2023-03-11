@@ -21,8 +21,21 @@ function Weekday(props) {
     setData(savedData ? JSON.parse(savedData) : []);
   }, []);
 
+  function handleDeleteData(index) {
+
+    const prev = localStorage.getItem("tasks");
+    const parsed = JSON.parse(prev)
+
+    const filtered = parsed.filter((item, idx) => index !== idx)
+    console.log(filtered)
+    localStorage.setItem("tasks", JSON.stringify(filtered));
+    setData(filtered ? JSON.parse(filtered) : []);
+
+  };
+
+
   const groupedData = data.reduce((result, item) => {
-    const groupKey = item.weekday; // критерий группировки
+    const groupKey = item.weekday; 
     if (!result[groupKey]) {
       result[groupKey] = [];
     }
@@ -30,20 +43,25 @@ function Weekday(props) {
     return result;
   }, {});
 
-  console.log(groupedData[1]);
   return (
     <div className={s.data}>
       {data.length === 0 ? (
         <p>No saved data yet</p>
       ) : (
-        groupedData[1].map((item, j) => (
+        groupedData[1] !== undefined && groupedData[1].map((item, j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
             {item.priority == 1 ? (
-              <div className={s.description}> {item.description}</div>
+                  <div className={s.descriptionContainer}>
+            
+                  <p className={s.description}>{item.description}</p>
+                </div>
             ) : (
+              <div className={s.descriptionContainer}>
               <div className={s.prio}> {item.description}</div>
+            </div>
             )}
+                <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))
       )}
@@ -58,12 +76,16 @@ function Weekday(props) {
                 <p className={s.description}>{item.description}</p>
               </div>
             ) : (
+              <div className={s.descriptionContainer}>
+      
               <div className={s.prio}> {item.description}</div>
+            </div>
             )}
+            <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))}
       {groupedData[3] !== undefined &&
-        groupedData[3].map((item) => (
+        groupedData[3].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
             {item.priority == 1 ? (
@@ -77,10 +99,11 @@ function Weekday(props) {
                 <div className={s.prio}> {item.description}</div>
               </div>
             )}
+            <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))}
       {groupedData[4] !== undefined &&
-        groupedData[4].map((item) => (
+        groupedData[4].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
             {item.priority == 1 ? (
@@ -94,10 +117,11 @@ function Weekday(props) {
                 <div className={s.prio}> {item.description}</div>
               </div>
             )}
+            <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))}
       {groupedData[5] !== undefined &&
-        groupedData[5].map((item) => (
+        groupedData[5].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
             {item.priority == 1 ? (
@@ -111,10 +135,11 @@ function Weekday(props) {
                 <div className={s.prio}> {item.description}</div>
               </div>
             )}
+            <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))}
       {groupedData[6] !== undefined &&
-        groupedData[6].map((item) => (
+        groupedData[6].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
             {item.priority == 1 ? (
@@ -128,6 +153,7 @@ function Weekday(props) {
                 <div className={s.prio}> {item.description}</div>
               </div>
             )}
+            <button onClick={() => handleDeleteData(j)}>Delete data</button>
           </div>
         ))}
     </div>

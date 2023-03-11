@@ -6,7 +6,6 @@
     top: 450px;
     border-radius: 20px;
 
-    background: #ECF0F1;
     display: inline-block;
 }
 
@@ -23,12 +22,16 @@
     font-size: 30px;
     line-height: 36px;
     display: inline-block;
+    margin: 10px;
 }
 
 .weekdayText {
     display: inline-block;
     background-color: #34495E;
-    border-radius: 20px 0px 0px 20px;
+    background: #456BD9;
+    clip-path: circle(50%);
+    height: 2cm;
+    width: 2cm;
 
     font-family: 'Inter';
     font-style: normal;
@@ -46,7 +49,7 @@
 }
 
 .description {
-   
+
     width: 286px;
     height: 47px;
     left: 497px;
@@ -64,6 +67,8 @@
     align-items: center;
     margin: 8px;
     display: inline-block;
+    margin: 10px;
+
 }
 
 .descriptionContainer {
@@ -72,6 +77,8 @@
     height: 70px;
     border-radius: 20px;
 
-    background: #ECF0F1;
     display: inline-block;
+    background-color: white;
+    margin: 7px;
+
 }
