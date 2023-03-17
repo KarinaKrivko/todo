@@ -51,7 +51,7 @@ function Weekday(props) {
         groupedData[1] !== undefined && groupedData[1].map((item, j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
                   <div className={s.descriptionContainer}>
             
                   <p className={s.description}>{item.description}</p>
@@ -70,7 +70,7 @@ function Weekday(props) {
         groupedData[2].map((item, j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
               <div className={s.descriptionContainer}>
             
                 <p className={s.description}>{item.description}</p>
@@ -88,7 +88,7 @@ function Weekday(props) {
         groupedData[3].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
               <div className={s.descriptionContainer}>
          
                 <p className={s.description}>{item.description}</p>
@@ -106,7 +106,7 @@ function Weekday(props) {
         groupedData[4].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
               <div className={s.descriptionContainer}>
              
                 <p className={s.description}>{item.description}</p>
@@ -124,7 +124,7 @@ function Weekday(props) {
         groupedData[5].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
               <div className={s.descriptionContainer}>
               
                 <p className={s.description}>{item.description}</p>
@@ -142,7 +142,7 @@ function Weekday(props) {
         groupedData[6].map((item,j) => (
           <div>
             <div className={s.weekdayText}>{weekdaysMap[item.weekday]}</div>
-            {item.priority == 1 ? (
+            {item.priority == 2 ? (
               <div className={s.descriptionContainer}>
 
                 <p className={s.description}>{item.description}</p>
